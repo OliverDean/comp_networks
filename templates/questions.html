@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" action="{{ url_for('questions') }}">
+    <h2>{{ question.text }}</h2>
+    {% if question.type == 'mcq' %}
+        {% for option in question.options %}
+            <div>
+                <input type="radio" name="answer" value="{{ option }}">
+                <label>{{ option }}</label>
+            </div>
+        {% endfor %}
+    {% elif question.type == 'checkbox' %}
+        {% for option in question.options %}
+            <div>
+                <input type="checkbox" name="answer" value="{{ option }}">
+                <label>{{ option }}</label>
+            </div>
+        {% endfor %}
+    {% elif question.type == 'text' %}
+        <textarea name="answer"></textarea>
+    {% endif %}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
