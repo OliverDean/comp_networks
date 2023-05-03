@@ -55,10 +55,10 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/test')
-@login_required
-def test():
-    return 'Welcome to the test page'
+@app.route('/index', methods=['GET', 'POST'])
+def index():
+    # Your code for handling the index route here
+    return render_template('index.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])

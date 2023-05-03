@@ -18,6 +18,10 @@
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
                     <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('index') }}">index</a></li>
+                    <li><a href="{{ url_for('leaderboard') }}">leaderboard</a></li>
+                    <li><a href="{{ url_for('questions') }}">questions</a></li>
+                    <li><a href="{{ url_for('results') }}">results</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
                 {% endif %}
             </ul>
