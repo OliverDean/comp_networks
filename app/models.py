@@ -11,7 +11,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(128), unique=True, nullable=False)
     hashed_password = db.Column(db.String(128), unique=True, nullable=False)
     created_at = db.Column(db.DateTime, default=func.now())
-
+    
     sessions = relationship('UserSession', back_populates='user')
     question_attempts = relationship('UserQuestionAttempt', back_populates='user')
     
